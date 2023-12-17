@@ -11,7 +11,10 @@ const makeQuery = (
   },
 ) => {};
 
-type MakeQueryParameters = unknown;
+// Tương tự như ReturnType, Parameters sẽ lấy ra type của các argument của function
+// Nếu function có nhiều argument thì sẽ trả về tuple các argument
+type MakeQueryParameters = Parameters<typeof makeQuery>;
+type MakeQueryParametersSecondArgument = MakeQueryParameters[1]
 
 type tests = [
   Expect<
