@@ -12,6 +12,7 @@ const testingFrameworks = {
   },
 };
 
-type TestingFramework = unknown;
+// keyof tạo ra một union type gồm các key của object
+type TestingFramework = keyof typeof testingFrameworks;
 
 type tests = [Expect<Equal<TestingFramework, "vitest" | "jest" | "mocha">>];
