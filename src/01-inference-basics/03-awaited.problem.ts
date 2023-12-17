@@ -8,7 +8,8 @@ const getUser = () => {
   });
 };
 
-type ReturnValue = ReturnType<typeof getUser>;
+// Awaited sẽ lấy ra type của giá trị trả về của Promise
+type ReturnValue = Awaited<ReturnType<typeof getUser>>;
 
 type tests = [
   Expect<Equal<ReturnValue, { id: string; name: string; email: string }>>,
