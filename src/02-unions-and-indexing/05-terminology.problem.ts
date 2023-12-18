@@ -8,22 +8,31 @@
  * Which is which?
  */
 
+// This is discriminated union
 type A =
   | {
       type: "a";
-      a: string;
+      whatever: string;
     }
   | {
       type: "b";
-      b: string;
+      something: string;
     }
   | {
       type: "c";
-      c: string;
+      whoCares: string;
     };
 
+function getUnion(result: A) {
+  if (result.type === "c") {
+    result.whoCares
+  }
+}
+
+// This is union
 type B = "a" | "b" | "c";
 
+// This is enum
 enum C {
   A = "a",
   B = "b",
